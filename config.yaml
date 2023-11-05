@@ -17,7 +17,13 @@ spec:
 			containers:
 				- image: nginx
 					name: lab4
-					resources: {}
-				dnsPolicy: ClusterFirst
+					resources:
+						requests:
+							memory: "64Mi"
+							cpu: "125m"
+						limits:
+							memory: "256Mi"
+							cpu: "250m"
+					dnsPolicy: ClusterFirst
 				restartPolicy: Always
 		status: {}
