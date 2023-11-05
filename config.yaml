@@ -5,7 +5,7 @@ metadata:
 spec:
  	replicas: 5
 	template:
-	 	kind: Pod
+		kind: Pod
 		metadata:
 			creationTimestamp: null
 			labels:
