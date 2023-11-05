@@ -1,17 +1,23 @@
 apiVersion: v1
-kind: Pod
+kind: Deployment
 metadata:
-	creationTimestamp: null
-	labels:
-	run: ngsecure
-	name: ngsecure
-spec:
-	securityContext:
-		runAsNonRoot: true
-	containers:
-		- image: nginx
-			name: ngsecure
-			resources: {}
-		dnsPolicy: ClusterFirst
-		restartPolicy: Always
-status: {}
+	name: restrictednginx
+ spec:
+ 	replicas: 5
+	template:
+	 	kind: Pod
+		metadata:
+			creationTimestamp: null
+			labels:
+				run: lab4
+			name: lab4
+		spec:
+			securityContext:
+				runAsNonRoot: true
+			containers:
+				- image: nginx
+					name: lab4
+					resources: {}
+				dnsPolicy: ClusterFirst
+				restartPolicy: Always
+		status: {}
